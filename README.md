@@ -14,17 +14,19 @@ This is a console-based implementation of the classic Tetris game using C++. The
 
 ## 🕹️ Controls
 
-- **⬅️ Left Arrow (←)**: Move the piece left.
-- **➡️ Right Arrow (→)**: Move the piece right.
-- **🔼 Up Arrow (↑)**: Rotate the piece.
-- **🔽 Down Arrow (↓)**: Soft drop (move the piece down faster).
-- **␣ Spacebar**: Hard drop (instantly drop the piece to the bottom).
-- **⏏️ Escape (ESC)**: Pause or quit the game.
+- **⬅️ Left Arrow (←)** : Move the piece left.
+- **➡️ Right Arrow (→)** : Move the piece right.
+- **🔼 Up Arrow (↑)** : Rotate the piece.
+- **🔽 Down Arrow (↓)** : Soft drop (move the piece down faster).
+- **␣ Spacebar** : Hard drop (instantly drop the piece to the bottom).
+- **Enter** : Press Enter to play again
+- **⏏️ Escape (ESC)** : Pause or quit the game.
 
 ## 🎲 Game Progression
 
 - The falling speed of tetrominoes increases after a certain number of cleared lines.
-- The current score and level are displayed on-screen.
+- The current score is displayed on-screen.
+- Highscore till now is displayed.
 - The game ends when blocks reach the top of the grid.
 
 ## 💻 Technical Details
@@ -44,3 +46,37 @@ This is a console-based implementation of the classic Tetris game using C++. The
 ```bash
 g++ -o tetris main.cpp
 ./tetris
+```
+
+## 📊 Data Structure Analysis
+### Data Structure Used 
+This game primarily utilizes the following data structures:
+
+1. **Vector (`std::vector`):**
+   - Game Board (board): A 2D vector (vector<vector<int>>) representing the Tetris grid, where 1 indicates a filled cell and 0 represents an empty cell.
+   - Color Board (colorBoard): Similar to board, but stores color information for each block.
+   - Tetromino Shapes (tetrominoes): A vector of Tetromino structures, each containing a 2D vector to represent its shape.
+   - Tetromino Colors (COLORS): A vector storing available color codes.
+   - Game Board (board): Defined as vector<vector<int>> board(HEIGHT, vector<int>(WIDTH, 0));
+   - Stores 1 for filled cells and 0 for empty cells.
+   - Color Board (colorBoard): Stores the color of each occupied cell to manage rendering.
+3. **Struct (`struct`):**
+   - shape - A 2D vector representing the shape of the tetromino.
+   - x and y - Position of the tetromino on the board.
+   - color - An integer representing the tetromino's color.
+3. **Boolean :**
+   - Tracks whether it is a valid move or not.
+   - Prevents unnecessary computations once the game ends.
+
+## Credits💳:
+
+👨‍💻[Tanishq Shah](https://github.com/Tanishq7361) <br>
+👨‍💻[Yash Oza](https://github.com/Yash-Oza-ui) <br>
+👨‍💻[Dhvanit Shah](https://github.com/shahdhvanit) <br>
+👨‍💻[Yash Vaghela](https://github.com/Yash071-ma) <br>
+👨‍💻[Om Sutariya](https://github.com/thunder1907)
+
+## License
+This project is licensed under the **MIT License.** 
+
+     
